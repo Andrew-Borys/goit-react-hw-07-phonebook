@@ -2,20 +2,17 @@ import PropTypes from 'prop-types';
 import { ListItem, DeleteButton } from './ContactItem.styled';
 import { FiDelete } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
-import { useDispatch } from 'react-redux';
-import { deleteItem } from 'redux/ContactSlice';
+import { useDeleteContactMutation } from 'services/ContactsApi';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const ContactItem = ({ contact }) => {
-  const dispatch = useDispatch();
-
+  const [deleteContact, { isSuccess }] = useDeleteContactMutation();
   return (
     <ListItem>
       {contact.name}: {contact.number}
       <IconContext.Provider value={{ color: 'red', size: '18px' }}>
-        <DeleteButton
-          type="button"
-          onClick={() => dispatch(deleteItem(contact.id))}
-        >
+        <DeleteButton type="button" onClick={() => deleteContact(contact.id)}>
+          {isSuccess && Notify.info('Contact deleted!')}
           <FiDelete />
         </DeleteButton>
       </IconContext.Provider>

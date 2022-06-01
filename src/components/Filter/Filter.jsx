@@ -1,6 +1,6 @@
 import { useId } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeFilter } from 'redux/ContactSlice';
+import { changeFilter } from 'redux/filterSlice';
 import { FormLabel, FormInput } from '../ContactForm/ContactForm.styled';
 
 const Filter = () => {

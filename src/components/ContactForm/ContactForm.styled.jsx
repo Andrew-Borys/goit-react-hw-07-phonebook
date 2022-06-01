@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FormLabel = styled.label`
   display: block;
   text-align: start;
-  color: #141010;
+  color: #000000;
   font-weight: 600;
 `;
 export const FormInput = styled.input`
@@ -20,11 +20,11 @@ export const Button = styled.button`
   margin: 0 auto;
   padding: 5px 10px;
   border-radius: 2px;
-  background-color: rgb(68, 70, 85);
+  background-color: rgb(56, 56, 56);
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   text-align: center;
   display: inline-block;
-  color: rgb(255, 255, 255);
+  color: rgb(253, 253, 253);
   border: 0px;
   text-decoration: none;
   font-family: inherit;
